@@ -1,6 +1,9 @@
 package com.example.myapplication
 
-open abstract class Race(val name: String){
+import android.os.Parcelable
+import java.io.Serializable
+
+open abstract class Race(val name: String): Serializable {
 
     var dice1:Int = 0 ;
     var dice2:Int = 0 ;
@@ -58,17 +61,17 @@ open abstract class Race(val name: String){
         return total;
     }
 
-    override fun toString(): String {
-        return """
-            Nome: $name
-            Força: $strenght
-            Destreza: $dexterity
-            Constituição: $constitution
-            Inteligência: $intelligence
-            Sabedoria: $wisery
-            Carisma: $charisma
-            Pontos de Vida: $lifePoints
-        """.trimIndent()
-    }
+    abstract fun getRaceName(): String
+    abstract fun getStrenght(): String
+    abstract fun getDexterity(): String
+    abstract fun getConstitution(): String
+    abstract fun getIntelligence(): String
+    abstract fun getWisery(): String
+    abstract fun getCharisma(): String
+    abstract fun getLifePoints(): String
+
+    abstract fun getRace(): String
 
 }
+
+

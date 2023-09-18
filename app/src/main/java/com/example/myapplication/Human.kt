@@ -16,4 +16,34 @@ class Human(name: String): Race(name){
     override fun calculateLifePoints() {
         this.lifePoints = this.constitution*3.5
     }
+
+    override fun getRaceName(): String {
+        return this.name
+    }
+
+    override fun getDexterity(): String {
+        return this.dexterity.toString()
+    }
+    override fun getConstitution(): String {
+        return this.constitution.toString()
+    }
+    override fun getIntelligence(): String {
+        return this.intelligence.toString()
+    }
+    override fun getWisery(): String {
+        return this.wisery.toString()
+    }
+    override fun getCharisma(): String {
+        return this.charisma.toString()
+    }
+    override fun getLifePoints(): String {
+        return this.lifePoints.toString()
+    }
+    override fun getStrenght(): String {
+        return this.strenght.toString()
+    }
+
+    override fun getRace(): String {
+        return "Human"
+    }
 }
