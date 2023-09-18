@@ -1,6 +1,6 @@
 package com.example.myapplication
 
-class HalfGiant: Race() {
+class HalfGiant(name: String): Race(name){
     override fun calculateStrenght() {}
 
     override fun calculateDexterity() {}

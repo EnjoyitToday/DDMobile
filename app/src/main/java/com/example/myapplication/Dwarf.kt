@@ -1,6 +1,6 @@
 package com.example.myapplication
 
-class Dwarf: Race() {
+class Dwarf(name: String): Race(name){
     override fun calculateStrenght() {}
 
     override fun calculateDexterity() {}

@@ -1,6 +1,6 @@
 package com.example.myapplication
 
-class Human: Race()  {
+class Human(name: String): Race(name){
     override fun calculateStrenght() {}
 
     override fun calculateDexterity() {}

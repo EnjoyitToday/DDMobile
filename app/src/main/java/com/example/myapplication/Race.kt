@@ -1,6 +1,6 @@
 package com.example.myapplication
 
-open abstract class Race{
+open abstract class Race(val name: String){
 
     var dice1:Int = 0 ;
     var dice2:Int = 0 ;
@@ -31,12 +31,12 @@ open abstract class Race{
      }
 
     companion object{
-        fun create(race:EnumRace):Race{
+        fun create(race:EnumRace, name: String):Race{
             val createdRace = when(race){
-                EnumRace.DWARF -> Dwarf()
-                EnumRace.ELF -> Elf()
-                EnumRace.HALFGIANT ->  HalfGiant()
-                EnumRace.HUMAN -> Human()
+                EnumRace.DWARF -> Dwarf(name)
+                EnumRace.ELF -> Elf(name)
+                EnumRace.HALFGIANT ->  HalfGiant(name)
+                EnumRace.HUMAN -> Human(name)
             }
             return createdRace
         }
@@ -56,6 +56,19 @@ open abstract class Race{
         this.dice3 = (1..6).random()
         var total = (this.dice1 + this.dice2 + this.dice3)
         return total;
+    }
+
+    override fun toString(): String {
+        return """
+            Nome: $name
+            Força: $strenght
+            Destreza: $dexterity
+            Constituição: $constitution
+            Inteligência: $intelligence
+            Sabedoria: $wisery
+            Carisma: $charisma
+            Pontos de Vida: $lifePoints
+        """.trimIndent()
     }
 
 }
