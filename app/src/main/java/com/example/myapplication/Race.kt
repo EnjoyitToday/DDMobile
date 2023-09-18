@@ -33,10 +33,10 @@ open abstract class Race(val name: String){
     companion object{
         fun create(race:EnumRace, name: String):Race{
             val createdRace = when(race){
-                EnumRace.DWARF -> Dwarf(name)
-                EnumRace.ELF -> Elf(name)
-                EnumRace.HALFGIANT ->  HalfGiant(name)
                 EnumRace.HUMAN -> Human(name)
+                EnumRace.HALFGIANT ->  HalfGiant(name)
+                EnumRace.ELF -> Elf(name)
+                EnumRace.DWARF -> Dwarf(name)
             }
             return createdRace
         }

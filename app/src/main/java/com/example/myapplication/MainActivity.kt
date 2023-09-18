@@ -2,6 +2,7 @@ package com.example.myapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ArrayAdapter
@@ -15,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         val spinner = findViewById<Spinner>(R.id.spinnerRace)
 
         // Crie uma lista de itens possíveis
-        val possibleRaces = listOf("Human", "HalfGiant", "Elf", "Dwarf")
+        val possibleRaces = listOf("HUMAN", "HALFGIANT", "ELF", "DWARF")
 
         // Crie um ArrayAdapter para associar a lista de itens ao Spinner
         val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, possibleRaces)
@@ -40,6 +41,7 @@ class MainActivity : AppCompatActivity() {
             // Crie uma instância da classe com base na raça selecionada
             val person = Race.create(EnumRace.valueOf(selectedRace), personName)
             println(person.toString())
+            Log.d("CLASSCREATE", "Instância da classe criada: $person")
             }
 
 
